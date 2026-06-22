@@ -1,0 +1,16 @@
+SELECT 
+      pls_obter_dados_segurado(b.NR_SEQUENCIA,'N') AS NOME
+    , pls_obter_dados_segurado(b.NR_SEQUENCIA,'P') AS PRODUTO
+    , pls_obter_dados_produto(b.NR_SEQ_PLANO,'S') AS SEGMENTACAO
+FROM PLS_SEGURADO b 
+INNER JOIN PLS_PLANO p
+ON b.NR_SEQ_PLANO = p.NR_SEQUENCIA
+    WHERE IE_SITUACAO_ATEND = 'A'
+ORDER BY 3
+    
+;
+    
+    
+SELECT *FROM PLS_SEGURADO WHERE CD_PESSOA_FISICA = '1181';
+
+SELECT *FROM PLS_PLANO WHERE NR_SEQUENCIA = '34';
